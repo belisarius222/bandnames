@@ -20,7 +20,7 @@ if (Meteor.is_client) {
       var new_bandname = {'text': text, 'author': author };
       console.log('adding new bandname:');
       console.log(new_bandname);
-      BandNames.insert(mew_bandname);
+      BandNames.insert(new_bandname);
     }
   };
 }
