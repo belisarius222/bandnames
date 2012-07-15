@@ -5,6 +5,10 @@ if (Meteor.is_client) {
     return "Yet another silly thing on the internet.";
   };
 
+  Template.bandnames = function () {
+      return BandNames.find();
+  };
+
   Template.submitname.events = {
     'click input' : function () {
       // template data, if any, is available in 'this'
