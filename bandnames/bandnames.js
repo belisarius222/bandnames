@@ -34,7 +34,7 @@ if (Meteor.is_server) {
         {text: 'DangleSkank',   author: 'Joel'},
         {text: 'WrathPony',     author: 'Joel'},
         {text: 'HMS Groovytron',author: 'Cody'},
-        {text: 'wubwub',        author: 'Sol', times_suggested: 2}
+        {text: 'wubwub',        author: 'Sol'}
       ];
     }
     for (var i = 0; i < names.length; i++){
