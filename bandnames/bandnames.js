@@ -6,7 +6,7 @@ if (Meteor.is_client) {
     Meteor.subscribe("bandnames");
   });
 
-  Template.names = function () {
+  Template.bandnames = function () {
       return BandNames.find();
   };
 
@@ -17,15 +17,15 @@ if (Meteor.is_client) {
       }
       var text = $('[name="new_bandname"]').val();
       var author = $('[name="new_author"]').val();
-      BandNames.insert({'text': text, 'author': author });
+      var new_bandname = {'text': text, 'author': author };
+      console.log('adding new bandname:');
+      console.log(new_bandname);
+      BandNames.insert(mew_bandname);
     }
   };
 }
 
 if (Meteor.is_server) {
-  Meteor.publish('bandnames', function () {
-    return BandNames.find();
-  });
   
   Meteor.startup(function(){
     var names = [];
