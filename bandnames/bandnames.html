@@ -3,11 +3,30 @@
 </head>
 
 <body>
-  {{> hello}}
+  <h1>Hello there!</h1>
+  {{> bandnames}}
+  {{> submitname}}
 </body>
 
-<template name="hello">
-  <h1>Hello World!</h1>
-  {{greeting}}
-  <input type="button" value="Click" />
+<template name="bandnames">
+  <h3>{{greeting}}</h3>
+  <ul class="bandnames">
+  {{#each bandnames}}
+    {{> bandname_entry}}
+  {{/each}}  
+  </ul>
+</template>
+
+<template name="bandname_entry">
+  <li class="bandname_entry">
+    <span class="author">{{author}}:</span>
+    <span class="text">{{text}}</span>
+  </li>
+</template>
+
+<template name="submitname">
+  <input name="new_bandname" type="textarea" placeholder="Type band name here"/>
+  <input name="new_author" type="textarea" placeholder="Type author here"/>
+  <input type="button" value="Submit" />
+
 </template>
