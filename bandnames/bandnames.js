@@ -28,19 +28,18 @@ if (Meteor.is_client) {
 if (Meteor.is_server) {
   
   Meteor.startup(function(){
-    var names = [];
     if (BandNames.find().count() === 0) {
-      names = [
+      var names = [
         {text: 'DangleSkank',   author: 'Joel'},
         {text: 'WrathPony',     author: 'Joel'},
         {text: 'HMS Groovytron',author: 'Cody'},
         {text: 'wubwub',        author: 'Sol'}
       ];
-    }
-    for (var i = 0; i < names.length; i++){
-      BandNames.insert(names[i],function(){
-        console.log('Added '+names[i].toString()+' to collection.');
-      });
+      for (var i = 0; i < names.length; i++){
+        BandNames.insert(names[i],function(){
+          console.log('Added '+names[i].toString()+' to collection.');
+        });
+      }
     }
   });
 }
