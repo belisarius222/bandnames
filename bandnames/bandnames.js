@@ -7,20 +7,20 @@ if (Meteor.is_client) {
   });
 
   Template.bandnames = function () {
-      return BandNames.find();
+    console.log('running Template.bandnames');
+    return BandNames.find();
   };
 
   Template.submitname.events = {
     'click input[type="button"]' : function () {
-      if (typeof console !== 'undefined'){
-        console.log("You pressed the button");
-      }
       var text = $('[name="new_bandname"]').val();
       var author = $('[name="new_author"]').val();
       var new_bandname = {'text': text, 'author': author };
       console.log('adding new bandname:');
       console.log(new_bandname);
-      BandNames.insert(new_bandname);
+      BandNames.insert(new_bandname,function(){
+        console.log('inserted new bandname');
+      });
     }
   };
 }
