@@ -5,6 +5,10 @@ if (Meteor.is_client) {
     return "Yet another silly thing on the internet.";
   };*/
 
+  Meteor.autosubscribe(function () {
+    Meteor.subscribe("bandnames");
+  });
+
   Template.bandnames = function () {
       return BandNames.find();
   };
@@ -14,7 +18,9 @@ if (Meteor.is_client) {
       // template data, if any, is available in 'this'
       if (typeof console !== 'undefined'){
         console.log("You pressed the button");
-        BandNames.insert({'text': new_bandname, 'author': new_author });
+        var text = $('[name="new_bandname"]').val();
+        var author = $('[name="new_bandname"]').val();
+        BandNames.insert({'text': text, 'author': author });
       }
     }
   };
