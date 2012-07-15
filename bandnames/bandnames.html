@@ -12,14 +12,14 @@
   <h3>List of band names</h3>
   <dl class="bandnames">
   {{#each bandnames}}
-    {{> bandname_entry}}
+    <dt class="author">{{author}}:</dt>
+    <dd class="text">{{text}}</dd>  
   {{/each}}  
   </dl>
 </template>
 
 <template name="bandname_entry">
-  <dt class="author">{{author}}:</dt>
-  <dd class="text">{{text}}</dd>  
+  
 </template>
 
 <template name="submitname">

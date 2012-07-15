@@ -6,7 +6,7 @@ if (Meteor.is_client) {
     Meteor.subscribe("bandnames");
   });
 
-  Template.bandnames.bandnames = function () {
+  Template.bandnames = function () {
       return BandNames.find();
   };
 
