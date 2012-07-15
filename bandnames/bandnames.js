@@ -1,9 +1,6 @@
 BandNames = new Meteor.Collection("bandnames");
 
 if (Meteor.is_client) {
-/*  Template.names.greeting = function () {
-    return "Yet another silly thing on the internet.";
-  };*/
 
   Meteor.autosubscribe(function () {
     Meteor.subscribe("bandnames");
