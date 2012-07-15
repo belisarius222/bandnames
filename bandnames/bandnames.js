@@ -11,7 +11,7 @@ if (Meteor.is_client) {
   };
 
   Template.submitname.events = {
-    'click input' : function () {
+    'click input[type="button"]' : function () {
       if (typeof console !== 'undefined'){
         console.log("You pressed the button");
       }
