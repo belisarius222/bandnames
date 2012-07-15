@@ -18,8 +18,9 @@ if (Meteor.is_client) {
 
 if (Meteor.is_server) {
   Meteor.startup(function(){
+    var names;
     if (BandNames.find().count() === 0) {
-      var names = [
+      names = [
         {text: 'DangleSkank',   author: 'Joel'},
         {text: 'WrathPony',     author: 'Joel'},
         {text: 'HMS Groovytron',author: 'Cody'},
