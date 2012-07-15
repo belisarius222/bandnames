@@ -4,24 +4,22 @@
 
 <body>
   <h1>Hello there!</h1>
-  {{> bandnames}}
+  {{> names}}
   {{> submitname}}
 </body>
 
-<template name="bandnames">
-  <h3>{{greeting}}</h3>
-  <ul class="bandnames">
+<template name="names">
+  <h3>List of band names</h3>
+  <dl class="bandnames">
   {{#each bandnames}}
     {{> bandname_entry}}
   {{/each}}  
-  </ul>
+  </dl>
 </template>
 
 <template name="bandname_entry">
-  <li class="bandname_entry">
-    <span class="author">{{author}}:</span>
-    <span class="text">{{text}}</span>
-  </li>
+  <dt class="author">{{author}}:</dt>
+  <dd class="text">{{text}}</dd>
 </template>
 
 <template name="submitname">
