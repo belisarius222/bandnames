@@ -3,9 +3,16 @@
 </head>
 
 <body>
-  <h1>Hello there!</h1>
-  {{> submitname}}
-  {{> names}}
+  <div class='navbar navbar-fixed-top'>
+    <a class='brand' href='#'>Band Name Repository</a>
+    {{> submitname}}
+  </div>
+  <div class='container'>
+    <center>
+      <div class='span6'>
+        {{> names}}
+      </div>
+    </center>
 </body>
 
 <template name="names">
@@ -19,12 +26,15 @@
 
 <template name="bandname_entry">
     <dt class="author">{{author}}:</dt>
-    <dd class="text">{{text}}<button class='close'>&times;</button></dd>  
+    <dd class="text">
+      {{text}}
+      <button class='close'>&times;</button>
+    </dd>  
 </template>
 
 <template name="submitname">
-  <input name="new_bandname" type="textarea" placeholder="Type band name here"/>
-  <input name="new_author" type="textarea" placeholder="Type author here"/>
+  <input name="new_bandname" type="text" placeholder="Type band name here"/>
+  <input name="new_author" type="text" placeholder="Type author here"/>
   <input type="button" value="Submit" />
 
 </template>
