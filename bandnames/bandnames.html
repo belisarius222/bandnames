@@ -5,11 +5,11 @@
 <body>
   <div class='navbar navbar-fixed-top'>
     <a class='brand' href='#'>Band Name Repository</a>
-    {{> submitname}}
   </div>
   <div class='container'>
     <center>
       <div class='span6'>
+        {{> submitname}}
         {{> names}}
       </div>
     </center>
@@ -18,7 +18,7 @@
 
 <template name="names">
   <h3>List of band names</h3>
-  <dl class="dl-horizontal bandnames">
+  <dl class="dl-horizontal well bandnames">
   {{#each bandnames}}
     {{> bandname_entry}}
   {{/each}}  
