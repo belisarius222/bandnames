@@ -7,8 +7,13 @@ if (Meteor.is_client) {
   });
 
   Template.names.bandnames = function () {
-    console.log('running Template.bandnames');
     return BandNames.find();
+  };
+  
+  Template.bandname_entry.events = {
+    'click button' : function() {
+      BandNames.remove(this._id);
+    }
   };
 
   Template.submitname.events = {
@@ -23,6 +28,7 @@ if (Meteor.is_client) {
       });
     }
   };
+  
 }
 
 if (Meteor.is_server) {

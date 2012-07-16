@@ -10,7 +10,7 @@
 
 <template name="names">
   <h3>List of band names</h3>
-  <dl class="bandnames">
+  <dl class="dl-horizontal bandnames">
   {{#each bandnames}}
     {{> bandname_entry}}
   {{/each}}  
@@ -19,7 +19,7 @@
 
 <template name="bandname_entry">
     <dt class="author">{{author}}:</dt>
-    <dd class="text">{{text}}</dd>  
+    <dd class="text">{{text}}<button class='close'>&times;</button></dd>  
 </template>
 
 <template name="submitname">
